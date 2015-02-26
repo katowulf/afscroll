@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+
+  <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript"
+          src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdn.firebase.com/js/client/2.1.1/firebase.js"></script>
+  <script type="text/javascript" src="../firebase-util.js"></script>
+  <script type="text/javascript" src="../angularfire.js"></script>
+  <script type="text/javascript"
+          src="../bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+
+</head>
+<body ng-app="app" ng-controller="ctrl">
+
+<h2>Hello {{world}}!</h2>
+
+<div infinite-scroll="items.scroll.next(10)" infinite-scroll-distance="1">
+  <div ng-repeat="item in items">
+    {{item.$id}}: {{item.number}}, {{item.string}}
+  </div>
+</div>
+
+</body>
+</html>
